@@ -4,6 +4,7 @@ summary: "An end-to-end automated B2B sales platform that manages 100+ leads thr
 category: agents
 tech: [Python, Gemini API, Gmail API, Verifalia API]
 github: https://github.com/PulkitGarg31/Agentic-AI-Sales-CRM
+image: /projects/sellari-ai.png
 featured: true
 order: 1
 ---
