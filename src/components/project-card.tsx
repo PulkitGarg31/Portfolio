@@ -1,0 +1,33 @@
+import type { Project } from "@/lib/projects-shared";
+import { ProjectImage } from "@/components/project-image";
+
+export function ProjectCard({ project, number }: { project: Project; number: string }) {
+  return (
+    <article className="overflow-hidden rounded-xl bg-surface shadow-[0_4px_14px_rgba(17,24,68,0.08)]">
+      {project.image && <ProjectImage project={project} className="aspect-video" />}
+      <div className="p-5">
+        <div className="flex items-center justify-between">
+          <span className="font-display text-xl text-display">{number}</span>
+          <span className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink">
+            {project.category}
+          </span>
+        </div>
+        <h3 className="mt-2 font-display text-lg uppercase leading-tight text-ink">{project.title}</h3>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{project.summary}</p>
+        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-support">
+          <span>{project.tech.join(" · ")}</span>
+        </div>
+        <div className="mt-4 flex gap-4 text-[11px] font-bold uppercase tracking-[0.1em]">
+          <a href={project.github} target="_blank" rel="noreferrer" className="text-ink transition hover:text-display">
+            GitHub ↗
+          </a>
+          {project.demo && (
+            <a href={project.demo} target="_blank" rel="noreferrer" className="text-ink transition hover:text-display">
+              Demo ↗
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
