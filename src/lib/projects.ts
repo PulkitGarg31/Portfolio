@@ -15,7 +15,7 @@ const projectSchema = z.object({
   image: z.string().startsWith("/").optional(),
   featured: z.boolean().default(false),
   order: z.number().int().positive(),
-});
+}).strict();
 
 const DEFAULT_DIR = path.join(process.cwd(), "content", "projects");
 
@@ -26,6 +26,12 @@ export function loadProjects(dir: string = DEFAULT_DIR): Project[] {
     );
   }
 
+  if (!fs.existsSync(dir)) {
+    throw new Error(
+      `Content directory not found: ${dir} — create content/projects/ and add at least one .md file`,
+    );
+  }
+
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
 
   const projects = files.map((file) => {
@@ -33,7 +39,12 @@ export function loadProjects(dir: string = DEFAULT_DIR): Project[] {
     if (raw.includes("TODO-CONTENT")) {
       console.warn(`[content] ${file} still contains TODO-CONTENT placeholders`);
     }
-    const { data } = matter(raw);
+    let data: Record<string, unknown>;
+    try {
+      ({ data } = matter(raw));
+    } catch (e) {
+      throw new Error(`Invalid YAML in ${file} — ${(e as Error).message}`);
+    }
     const parsed = projectSchema.safeParse(data);
     if (!parsed.success) {
       const issues = parsed.error.issues

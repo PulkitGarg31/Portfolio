@@ -53,4 +53,25 @@ describe("loadProjects", () => {
     vi.spyOn(console, "warn").mockImplementation(() => {});
     expect(() => loadProjects(fx("empty"))).toThrowError(/No projects found/);
   });
+
+  it("throws on unrecognized frontmatter keys (typo protection)", () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    expect(() => loadProjects(fx("unknown-key"))).toThrowError(
+      /extra\.md.*[Uu]nrecognized/s,
+    );
+  });
+
+  it("throws naming the file on malformed YAML", () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    expect(() => loadProjects(fx("bad-yaml"))).toThrowError(
+      /Invalid YAML in broken\.md/,
+    );
+  });
+
+  it("throws a helpful error when the content directory is missing", () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    expect(() => loadProjects(fx("does-not-exist"))).toThrowError(
+      /Content directory not found/,
+    );
+  });
 });
