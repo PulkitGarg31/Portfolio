@@ -1,0 +1,12 @@
+# dependencies / build
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# env & deploy
+.env*
+.vercel
+
+# brainstorm companion sessions
+.superpowers/
