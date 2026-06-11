@@ -1,4 +1,4 @@
-# Personal Website — Design Spec
+#  Personal Website — Design Spec
 
 **Date:** 2026-06-11
 **Owner:** Pulkit Garg
