@@ -7,7 +7,7 @@ export const site = {
     "GenAI, agentic systems & ML, built end-to-end and shipped, not just notebooked.",
   marquee: ["GenAI", "Agentic AI", "Machine Learning", "MLOps"],
   email: "pulkit3110@gmail.com",
-  github: "https://github.com/TODO-CONTENT",
+  github: "https://github.com/PulkitGarg31",
   linkedin: "https://www.linkedin.com/in/TODO-CONTENT",
   resumePath: "/resume.pdf",
   availability: "Open to ML / GenAI roles. Reply within 24h.",

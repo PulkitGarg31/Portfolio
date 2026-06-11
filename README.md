@@ -1,4 +1,4 @@
-# pulkitgarg — portfolio
+# pulkitgarg portfolio
 
 Single-page ML engineer portfolio. Next.js 15 static export, Tailwind v4, markdown content.
 Design spec: `docs/superpowers/specs/2026-06-11-personal-website-design.md`.
