@@ -29,10 +29,11 @@ export function Navbar() {
           </div>
           <a
             href={site.resumePath}
-            download
+            target="_blank"
+            rel="noreferrer"
             className="rounded-full bg-display px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-bg transition hover:opacity-90"
           >
-            Resume <span aria-hidden="true">↓</span>
+            Resume <span aria-hidden="true">↗</span>
           </a>
           <ThemeToggle />
         </div>

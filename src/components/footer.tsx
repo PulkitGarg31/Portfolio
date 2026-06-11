@@ -16,13 +16,14 @@ export function Footer() {
             Email Me
           </a>
           {[
-            { href: site.github, label: "GitHub" },
-            { href: site.linkedin, label: "LinkedIn" },
-            { href: site.resumePath, label: "Resume PDF" },
+            { href: site.github, label: "GitHub", download: false },
+            { href: site.linkedin, label: "LinkedIn", download: false },
+            { href: site.resumePath, label: "Resume PDF", download: true },
           ].map((l) => (
             <a
               key={l.label}
               href={l.href}
+              download={l.download}
               target={l.href.startsWith("http") ? "_blank" : undefined}
               rel={l.href.startsWith("http") ? "noreferrer" : undefined}
               className="rounded-full border border-support px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.1em] text-band-ink/90 transition hover:border-band-ink"
