@@ -14,6 +14,7 @@ export type Mark = {
   className: string;
 };
 
+// Parent must be `relative` (and ideally `overflow-hidden`) — marks are absolutely positioned and drift ±8px.
 export function SparkField({ marks }: { marks: Mark[] }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -21,7 +22,7 @@ export function SparkField({ marks }: { marks: Mark[] }) {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [8, -8]);
+  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [8, -8]);
 
   return (
     <div
@@ -30,11 +31,7 @@ export function SparkField({ marks }: { marks: Mark[] }) {
       className="pointer-events-none absolute inset-0 z-0"
     >
       {marks.map((m, i) => (
-        <motion.span
-          key={i}
-          style={reduce ? undefined : { y }}
-          className={`absolute ${m.className}`}
-        >
+        <motion.span key={i} style={{ y }} className={`absolute ${m.className}`}>
           {m.kind === "spark" && <Spark className="h-full w-full" />}
           {m.kind === "plus" && (
             <span className="block font-light leading-none">+</span>
