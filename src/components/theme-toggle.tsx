@@ -11,9 +11,9 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      aria-label="Toggle dark mode"
+      aria-label={mounted && resolvedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className="rounded-full border border-support px-2.5 py-1 text-sm leading-none text-ink transition hover:border-display"
+      className="inline-flex w-8 justify-center rounded-full border border-support px-0 py-1 text-sm leading-none text-ink transition hover:border-display"
     >
       {mounted ? (resolvedTheme === "dark" ? "☀" : "☾") : "·"}
     </button>
