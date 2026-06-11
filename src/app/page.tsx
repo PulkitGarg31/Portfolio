@@ -1,11 +1,18 @@
+import { loadProjects } from "@/lib/projects";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
+  const projects = loadProjects();
   return (
     <main className="p-10">
       <ThemeToggle />
-      <p className="font-display text-6xl uppercase text-display">Pulkit Garg</p>
-      <p className="text-muted">token check: muted on bg</p>
+      <ul>
+        {projects.map((p) => (
+          <li key={p.slug}>
+            {p.title} — {p.category} {p.featured && "★"}
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
