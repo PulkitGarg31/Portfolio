@@ -12,7 +12,7 @@ const HERO_MARKS: Mark[] = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-6 pb-12 pt-12 sm:px-10">
+    <section id="top" className="relative overflow-hidden px-6 pb-12 pt-20 sm:px-10 sm:pt-24">
       <SparkField marks={HERO_MARKS} />
 
       <h1 className="relative z-10 text-center font-display text-[clamp(64px,14vw,150px)] uppercase leading-[0.94] tracking-[0.005em] text-display">
