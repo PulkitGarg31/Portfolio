@@ -14,7 +14,7 @@ export type Mark = {
   className: string;
 };
 
-// Parent must be `relative` (and ideally `overflow-hidden`) — marks are absolutely positioned and drift ±8px.
+// Parent must be `relative` (and ideally `overflow-hidden`); marks are absolutely positioned and drift +/-8px.
 export function SparkField({ marks }: { marks: Mark[] }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();

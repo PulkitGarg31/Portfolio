@@ -7,9 +7,9 @@ const anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Pulkit Garg — ML Engineer",
+  title: "Pulkit Garg | ML Engineer",
   description:
-    "GenAI, agentic systems & ML — built end-to-end and shipped, not just notebooked.",
+    "GenAI, agentic systems & ML, built end-to-end and shipped, not just notebooked.",
   icons: { icon: "/favicon.svg" },
 };
 

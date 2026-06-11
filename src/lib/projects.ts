@@ -28,7 +28,7 @@ export function loadProjects(dir: string = DEFAULT_DIR): Project[] {
 
   if (!fs.existsSync(dir)) {
     throw new Error(
-      `Content directory not found: ${dir} — create content/projects/ and add at least one .md file`,
+      `Content directory not found: ${dir}. Create content/projects/ and add at least one .md file`,
     );
   }
 
@@ -43,21 +43,21 @@ export function loadProjects(dir: string = DEFAULT_DIR): Project[] {
     try {
       ({ data } = matter(raw));
     } catch (e) {
-      throw new Error(`Invalid YAML in ${file} — ${(e as Error).message}`);
+      throw new Error(`Invalid YAML in ${file}: ${(e as Error).message}`);
     }
     const parsed = projectSchema.safeParse(data);
     if (!parsed.success) {
       const issues = parsed.error.issues
         .map((i) => `${i.path.join(".") || "(root)"}: ${i.message}`)
         .join("; ");
-      throw new Error(`Invalid frontmatter in ${file} — ${issues}`);
+      throw new Error(`Invalid frontmatter in ${file}: ${issues}`);
     }
     const project: Project = { ...parsed.data, slug: file.replace(/\.md$/, "") };
     return project;
   });
 
   if (projects.length === 0) {
-    throw new Error(`No projects found in ${dir} — add at least one .md file`);
+    throw new Error(`No projects found in ${dir}. Add at least one .md file`);
   }
 
   const featured = projects.filter((p) => p.featured);
