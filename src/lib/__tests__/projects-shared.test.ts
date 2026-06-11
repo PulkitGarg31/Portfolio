@@ -25,7 +25,7 @@ describe("filterProjects", () => {
   ];
 
   it("returns everything for 'all'", () => {
-    expect(filterProjects(projects, "all")).toHaveLength(3);
+    expect(filterProjects(projects, "all")).toEqual(projects);
   });
 
   it("returns only the matching category", () => {
@@ -41,5 +41,9 @@ describe("activeCategories", () => {
   it("returns only categories present, in canonical order", () => {
     const projects = [p({ category: "ml" }), p({ category: "genai" })];
     expect(activeCategories(projects)).toEqual(["genai", "ml"]);
+  });
+
+  it("returns empty array for no projects", () => {
+    expect(activeCategories([])).toEqual([]);
   });
 });
