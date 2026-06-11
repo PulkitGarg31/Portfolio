@@ -42,7 +42,7 @@ export function FeaturedCard({ project }: { project: Project }) {
           )}
         </div>
       </div>
-      <ProjectImage project={project} className="min-h-[220px] sm:w-[38%]" />
+      <ProjectImage project={project} className="min-h-[240px] sm:w-[52%]" />
     </article>
   );
 }

@@ -10,7 +10,7 @@ export function ProjectImage({ project, className = "" }: { project: Project; cl
           alt={`${project.title} screenshot`}
           fill
           sizes="(min-width: 640px) 50vw, 100vw"
-          className="object-contain p-3"
+          className="object-contain p-2"
         />
       </div>
     );
