@@ -2,6 +2,10 @@ import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { loadProjects } from "@/lib/projects";
 
+vi.mock("@/config/site", () => ({
+  site: { github: "https://github.com/TODO-CONTENT" },
+}));
+
 const fx = (name: string) =>
   path.join(process.cwd(), "src", "lib", "__tests__", "fixtures", name);
 
