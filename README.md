@@ -30,7 +30,5 @@ Push to `main` → Vercel deploys automatically.
 
 ## Content TODO before sharing the link
 
-- [ ] Replace TODO-CONTENT in `content/projects/*.md` (real stories with numbers)
-- [ ] Replace TODO-CONTENT in `src/config/site.ts` (GitHub/LinkedIn URLs, bio, education)
-- [ ] Replace the placeholder `public/resume.pdf` with the real resume
 - [ ] Project screenshots into `public/projects/` + `image:` frontmatter
+- [ ] Publish the Sellari, YouTube Chat, and Voca repos (their cards currently link to the GitHub profile)
