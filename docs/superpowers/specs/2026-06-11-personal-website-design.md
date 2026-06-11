@@ -186,7 +186,7 @@ GitHub repository → Vercel (free) connected to `main`, auto-deploy on push. Si
 1. Project list: for each — title, one-paragraph story with a number, category, tech list, GitHub URL, optional demo URL + screenshot.
 2. Which single project is featured (01).
 3. Bio (3–4 sentences) + education line — can be drafted together and edited.
-4. Email, GitHub, LinkedIn URLs. *(Email on file: gargp6430@gmail.com — confirm which to publish.)*
+4. Email: **pulkit3110@gmail.com** (confirmed). GitHub and LinkedIn URLs still needed.
 5. `resume.pdf`.
 6. Optional casual photo for The Human.
 
