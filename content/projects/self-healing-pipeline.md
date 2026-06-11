@@ -4,5 +4,5 @@ summary: "An Airflow pipeline that detects schema drift and repairs itself. A Tr
 category: agents
 tech: [Airflow, PostgreSQL, dbt, Ollama, Docker, Streamlit]
 github: https://github.com/PulkitGarg31/self-healing-pipeline
-order: 2
+order: 3
 ---

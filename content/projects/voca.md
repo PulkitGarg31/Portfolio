@@ -4,5 +4,5 @@ summary: "A full-stack vocabulary learning platform with 500+ words, meanings, a
 category: other
 tech: [Next.js, React, MongoDB, NextAuth.js, LangChain]
 github: https://github.com/PulkitGarg31
-order: 4
+order: 2
 ---

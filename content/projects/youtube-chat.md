@@ -4,5 +4,5 @@ summary: "A Chrome extension for real-time chat over any YouTube video, built on
 category: genai
 tech: [FastAPI, LangChain, ChromaDB, JavaScript]
 github: https://github.com/PulkitGarg31
-order: 3
+order: 4
 ---
