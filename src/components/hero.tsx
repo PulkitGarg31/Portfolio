@@ -22,7 +22,7 @@ export function Hero() {
           Pulkit
         </span>
         <br />
-        <span className="relative inline-block">
+        <span className="relative mt-[0.05em] inline-block">
           Garg
           {/* the star: slightly below-right of the final G */}
           <Spark className="absolute -bottom-[0.18em] -right-[0.36em] h-[0.38em] w-[0.38em] rotate-[-8deg] text-ink" />
