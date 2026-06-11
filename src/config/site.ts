@@ -8,7 +8,7 @@ export const site = {
   marquee: ["GenAI", "Agentic AI", "Machine Learning", "MLOps"],
   email: "pulkit3110@gmail.com",
   github: "https://github.com/PulkitGarg31",
-  linkedin: "https://www.linkedin.com/in/TODO-CONTENT",
+  linkedin: "https://www.linkedin.com/in/pulkitgarg31",
   resumePath: "/resume.pdf",
   availability: "Open to ML / GenAI roles. Reply within 24h.",
   footerTag: "Built with Next.js, designed loud",
