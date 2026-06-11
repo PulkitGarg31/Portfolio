@@ -31,7 +31,7 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <div className="mt-12 flex flex-wrap justify-between gap-2 text-[10px] uppercase tracking-[0.12em] text-band-ink/50">
+        <div className="mt-12 flex flex-wrap justify-between gap-2 text-[10px] uppercase tracking-[0.12em] text-band-ink/70">
           <span>
             {site.name} © {new Date().getFullYear()}
           </span>

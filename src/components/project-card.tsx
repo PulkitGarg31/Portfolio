@@ -14,16 +14,16 @@ export function ProjectCard({ project, number }: { project: Project; number: str
         </div>
         <h3 className="mt-2 font-display text-lg uppercase leading-tight text-ink">{project.title}</h3>
         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{project.summary}</p>
-        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-support">
+        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted">
           <span>{project.tech.join(" · ")}</span>
         </div>
         <div className="mt-4 flex gap-4 text-[11px] font-bold uppercase tracking-[0.1em]">
           <a href={project.github} target="_blank" rel="noreferrer" className="text-ink transition hover:text-display">
-            GitHub ↗
+            GitHub <span aria-hidden="true">↗</span>
           </a>
           {project.demo && (
             <a href={project.demo} target="_blank" rel="noreferrer" className="text-ink transition hover:text-display">
-              Demo ↗
+              Demo <span aria-hidden="true">↗</span>
             </a>
           )}
         </div>

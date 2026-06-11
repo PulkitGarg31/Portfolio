@@ -29,7 +29,7 @@ export function FeaturedCard({ project, number }: { project: Project; number: st
             rel="noreferrer"
             className="rounded-full bg-badge px-5 py-2 text-[11px] font-bold uppercase tracking-[0.1em] text-badge-ink transition hover:opacity-90"
           >
-            GitHub ↗
+            GitHub <span aria-hidden="true">↗</span>
           </a>
           {project.demo && (
             <a
@@ -38,7 +38,7 @@ export function FeaturedCard({ project, number }: { project: Project; number: st
               rel="noreferrer"
               className="rounded-full border border-ink px-5 py-2 text-[11px] font-bold uppercase tracking-[0.1em] text-ink transition hover:bg-ink/5"
             >
-              Live Demo ↗
+              Live Demo <span aria-hidden="true">↗</span>
             </a>
           )}
         </div>

@@ -54,7 +54,7 @@ export function Hero() {
             href="#work"
             className="inline-block rounded-full bg-display px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] text-bg transition hover:opacity-90"
           >
-            View Projects →
+            View Projects <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

@@ -32,7 +32,7 @@ export function Navbar() {
             download
             className="rounded-full bg-display px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-bg transition hover:opacity-90"
           >
-            Resume ↓
+            Resume <span aria-hidden="true">↓</span>
           </a>
           <ThemeToggle />
         </div>

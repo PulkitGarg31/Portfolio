@@ -21,7 +21,7 @@ export function AboutSection() {
               {para}
             </p>
           ))}
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-support">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">
             {site.education}
           </p>
         </div>
