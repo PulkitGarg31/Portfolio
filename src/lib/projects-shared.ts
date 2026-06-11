@@ -6,14 +6,14 @@ export const CATEGORY_LABELS: Record<Category | "all", string> = {
   genai: "GenAI",
   agents: "Agents",
   ml: "ML",
-  other: "Full Stack & GenAI",
+  other: "Full Stack",
 };
 
 export type Project = {
   slug: string;
   title: string;
   summary: string;
-  category: Category;
+  categories: Category[];
   tech: string[];
   github: string;
   demo?: string;
@@ -28,9 +28,9 @@ export function filterProjects(
 ): Project[] {
   return category === "all"
     ? projects
-    : projects.filter((p) => p.category === category);
+    : projects.filter((p) => p.categories.includes(category));
 }
 
 export function activeCategories(projects: Project[]): Category[] {
-  return CATEGORIES.filter((c) => projects.some((p) => p.category === c));
+  return CATEGORIES.filter((c) => projects.some((p) => p.categories.includes(c)));
 }

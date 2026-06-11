@@ -6,10 +6,15 @@ export function ProjectCard({ project }: { project: Project }) {
     <article className="overflow-hidden rounded-xl bg-surface shadow-[0_4px_14px_rgba(17,24,68,0.08)]">
       {project.image && <ProjectImage project={project} className="aspect-video" />}
       <div className="p-5">
-        <div className="flex items-center">
-          <span className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink">
-            {CATEGORY_LABELS[project.category]}
-          </span>
+        <div className="flex flex-wrap items-center gap-2">
+          {project.categories.map((c) => (
+            <span
+              key={c}
+              className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink"
+            >
+              {CATEGORY_LABELS[c]}
+            </span>
+          ))}
         </div>
         <h3 className="mt-2 font-display text-lg uppercase leading-tight text-ink">{project.title}</h3>
         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{project.summary}</p>

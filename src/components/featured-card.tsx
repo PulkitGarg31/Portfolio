@@ -5,10 +5,15 @@ export function FeaturedCard({ project }: { project: Project }) {
   return (
     <article className="overflow-hidden rounded-2xl bg-surface shadow-[0_6px_20px_rgba(17,24,68,0.10)] sm:flex">
       <div className="flex-1 p-6 sm:p-8">
-        <div className="flex items-center">
-          <span className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink">
-            {CATEGORY_LABELS[project.category]}
-          </span>
+        <div className="flex flex-wrap items-center gap-2">
+          {project.categories.map((c) => (
+            <span
+              key={c}
+              className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink"
+            >
+              {CATEGORY_LABELS[c]}
+            </span>
+          ))}
         </div>
         <h3 className="mt-3 font-display text-[clamp(22px,3vw,32px)] uppercase leading-tight text-ink">
           {project.title}

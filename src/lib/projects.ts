@@ -8,7 +8,10 @@ import { site } from "@/config/site";
 const projectSchema = z.object({
   title: z.string().min(1),
   summary: z.string().min(1),
-  category: z.enum(CATEGORIES),
+  category: z.union([
+    z.enum(CATEGORIES),
+    z.array(z.enum(CATEGORIES)).min(1).max(3),
+  ]),
   tech: z.array(z.string().min(1)).min(1).max(8),
   github: z.string().url(),
   demo: z.string().url().optional(),
@@ -52,7 +55,12 @@ export function loadProjects(dir: string = DEFAULT_DIR): Project[] {
         .join("; ");
       throw new Error(`Invalid frontmatter in ${file}: ${issues}`);
     }
-    const project: Project = { ...parsed.data, slug: file.replace(/\.md$/, "") };
+    const { category, ...rest } = parsed.data;
+    const project: Project = {
+      ...rest,
+      categories: Array.isArray(category) ? category : [category],
+      slug: file.replace(/\.md$/, ""),
+    };
     return project;
   });
 
