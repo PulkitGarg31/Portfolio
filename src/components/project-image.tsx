@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Project } from "@/lib/projects-shared";
+import { CATEGORY_LABELS, type Project } from "@/lib/projects-shared";
 
 export function ProjectImage({ project, className = "" }: { project: Project; className?: string }) {
   if (project.image) {
@@ -20,7 +20,7 @@ export function ProjectImage({ project, className = "" }: { project: Project; cl
       className={`relative flex items-center justify-center overflow-hidden bg-[repeating-linear-gradient(45deg,transparent,transparent_12px,color-mix(in_srgb,var(--support)_18%,transparent)_12px,color-mix(in_srgb,var(--support)_18%,transparent)_24px)] ${className}`}
     >
       <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">
-        {project.category}
+        {CATEGORY_LABELS[project.category]}
       </span>
     </div>
   );

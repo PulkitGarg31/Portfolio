@@ -1,6 +1,14 @@
 export const CATEGORIES = ["genai", "agents", "ml", "other"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
+export const CATEGORY_LABELS: Record<Category | "all", string> = {
+  all: "All",
+  genai: "GenAI",
+  agents: "Agents",
+  ml: "ML",
+  other: "Full Stack & GenAI",
+};
+
 export type Project = {
   slug: string;
   title: string;

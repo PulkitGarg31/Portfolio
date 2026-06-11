@@ -5,19 +5,12 @@ import { motion } from "framer-motion";
 import {
   activeCategories,
   filterProjects,
+  CATEGORY_LABELS,
   type Category,
   type Project,
 } from "@/lib/projects-shared";
 import { FeaturedCard } from "@/components/featured-card";
 import { ProjectCard } from "@/components/project-card";
-
-const LABELS: Record<Category | "all", string> = {
-  all: "All",
-  genai: "GenAI",
-  agents: "Agents",
-  ml: "ML",
-  other: "Other",
-};
 
 export function ProjectsSection({ projects }: { projects: Project[] }) {
   const [category, setCategory] = useState<Category | "all">("all");
@@ -45,7 +38,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                 : "border border-ink text-ink hover:bg-ink/5"
             }`}
           >
-            {LABELS[c]}
+            {CATEGORY_LABELS[c]}
           </button>
         ))}
       </div>

@@ -1,4 +1,4 @@
-import type { Project } from "@/lib/projects-shared";
+import { CATEGORY_LABELS, type Project } from "@/lib/projects-shared";
 import { ProjectImage } from "@/components/project-image";
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="p-5">
         <div className="flex items-center">
           <span className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink">
-            {project.category}
+            {CATEGORY_LABELS[project.category]}
           </span>
         </div>
         <h3 className="mt-2 font-display text-lg uppercase leading-tight text-ink">{project.title}</h3>

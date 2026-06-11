@@ -1,4 +1,4 @@
-import type { Project } from "@/lib/projects-shared";
+import { CATEGORY_LABELS, type Project } from "@/lib/projects-shared";
 import { ProjectImage } from "@/components/project-image";
 
 export function FeaturedCard({ project }: { project: Project }) {
@@ -7,7 +7,7 @@ export function FeaturedCard({ project }: { project: Project }) {
       <div className="flex-1 p-6 sm:p-8">
         <div className="flex items-center">
           <span className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink">
-            {project.category}
+            {CATEGORY_LABELS[project.category]}
           </span>
         </div>
         <h3 className="mt-3 font-display text-[clamp(22px,3vw,32px)] uppercase leading-tight text-ink">
