@@ -1,13 +1,12 @@
 import type { Project } from "@/lib/projects-shared";
 import { ProjectImage } from "@/components/project-image";
 
-export function ProjectCard({ project, number }: { project: Project; number: string }) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="overflow-hidden rounded-xl bg-surface shadow-[0_4px_14px_rgba(17,24,68,0.08)]">
       {project.image && <ProjectImage project={project} className="aspect-video" />}
       <div className="p-5">
-        <div className="flex items-center justify-between">
-          <span className="font-display text-xl text-display">{number}</span>
+        <div className="flex items-center">
           <span className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink">
             {project.category}
           </span>

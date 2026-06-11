@@ -25,7 +25,6 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
   const filtered = filterProjects(projects, category);
   const featuredFirst = filtered[0]?.featured === true;
   const gridItems = featuredFirst ? filtered.slice(1) : filtered;
-  const num = (p: Project) => String(filtered.indexOf(p) + 1).padStart(2, "0");
 
   return (
     <section id="work" className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
@@ -54,13 +53,13 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
       <div className="mt-8 space-y-5">
         {featuredFirst && (
           <motion.div layout>
-            <FeaturedCard project={filtered[0]} number="01" />
+            <FeaturedCard project={filtered[0]} />
           </motion.div>
         )}
         <div className="grid gap-5 sm:grid-cols-2">
           {gridItems.map((p) => (
             <motion.div layout key={p.slug}>
-              <ProjectCard project={p} number={num(p)} />
+              <ProjectCard project={p} />
             </motion.div>
           ))}
         </div>

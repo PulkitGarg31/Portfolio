@@ -1,12 +1,11 @@
 import type { Project } from "@/lib/projects-shared";
 import { ProjectImage } from "@/components/project-image";
 
-export function FeaturedCard({ project, number }: { project: Project; number: string }) {
+export function FeaturedCard({ project }: { project: Project }) {
   return (
     <article className="overflow-hidden rounded-2xl bg-surface shadow-[0_6px_20px_rgba(17,24,68,0.10)] sm:flex">
       <div className="flex-1 p-6 sm:p-8">
-        <div className="flex items-center gap-3">
-          <span className="font-display text-3xl text-display">{number}</span>
+        <div className="flex items-center">
           <span className="rounded-full bg-badge px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-badge-ink">
             {project.category}
           </span>
