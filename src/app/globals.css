@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #eae0cf;
+  --surface: #fffdf8;
+  --display: #4b5694;
+  --ink: #111844;
+  --muted: #5a678a;
+  --badge-bg: #111844;
+  --badge-text: #eae0cf;
+  --support: #7288ae;
+  --band: #111844;
+  --band-ink: #eae0cf;
+}
+
+.dark {
+  --bg: #111844;
+  --surface: #1a2254;
+  --display: #eae0cf;
+  --ink: #eae0cf;
+  --muted: #9fb0cc;
+  --badge-bg: #eae0cf;
+  --badge-text: #111844;
+  --support: #7288ae;
+  --band: #111844;
+  --band-ink: #eae0cf;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-display: var(--display);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-badge: var(--badge-bg);
+  --color-badge-ink: var(--badge-text);
+  --color-support: var(--support);
+  --color-band: var(--band);
+  --color-band-ink: var(--band-ink);
+  --font-display: var(--font-anton);
+  --font-body: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 30s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee { animation: none; }
+}
+
+/* visible focus ring everywhere */
+:focus-visible {
+  outline: 2px solid var(--display);
+  outline-offset: 2px;
+}
