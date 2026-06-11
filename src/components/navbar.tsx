@@ -21,7 +21,7 @@ export function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink transition hover:text-display"
+                className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink transition hover:text-display dark:hover:opacity-70"
               >
                 {l.label}
               </a>
