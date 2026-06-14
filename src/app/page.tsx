@@ -5,6 +5,7 @@ import { Marquee } from "@/components/marquee";
 import { ProjectsSection } from "@/components/projects-section";
 import { StackSection } from "@/components/stack-section";
 import { AboutSection } from "@/components/about-section";
+import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <ProjectsSection projects={projects} />
         <StackSection />
         <AboutSection />
+        <ContactSection />
       </main>
       <Footer />
     </>

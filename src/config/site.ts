@@ -10,6 +10,7 @@ export const site = {
   github: "https://github.com/PulkitGarg31",
   linkedin: "https://www.linkedin.com/in/pulkitgarg31",
   resumePath: "/Pulkit_Garg_Resume.pdf",
+  web3formsKey: "TODO-CONTENT-replace-with-web3forms-access-key",
   availability: "Open to ML / GenAI roles. Reply within 24h.",
   footerTag: "Built with Next.js, designed loud",
   bio: [
