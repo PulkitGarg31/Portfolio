@@ -129,26 +129,32 @@ body {
   font-size: clamp(56px, 14vw, 160px);
   line-height: 0.88;
   letter-spacing: 0.01em;
-  color: #eae0cf;
-  animation: intro-slam 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-.intro-flare {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+  /* sheen lives in the text fill and is clipped to the glyphs, so the shine
+     rides the letters themselves, never a rectangle around them */
   background: linear-gradient(
     115deg,
-    transparent 38%,
-    rgba(255, 255, 255, 0.55) 48%,
-    transparent 58%
+    #eae0cf 0%,
+    #eae0cf 42%,
+    #ffffff 50%,
+    #eae0cf 58%,
+    #eae0cf 100%
   );
   background-size: 250% 100%;
   background-position: 200% 0;
-  mix-blend-mode: screen;
-  animation: intro-flare 0.9s ease-out 0.45s both;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation:
+    intro-slam 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both,
+    intro-sheen 0.9s ease-out 0.45s both;
 }
+/* smooth handoff: overlay dissolves while the name eases back into the page */
 .intro-overlay.intro-out {
-  animation: intro-wipe 0.6s ease forwards;
+  animation: intro-dissolve 0.7s ease forwards;
+}
+.intro-out .intro-name {
+  animation: intro-recede 0.7s ease forwards;
 }
 .intro-skip {
   position: absolute;
@@ -186,14 +192,22 @@ body {
     opacity: 1;
   }
 }
-@keyframes intro-flare {
+@keyframes intro-sheen {
+  from {
+    background-position: 200% 0;
+  }
   to {
     background-position: -50% 0;
   }
 }
-@keyframes intro-wipe {
+@keyframes intro-dissolve {
   to {
     opacity: 0;
-    transform: scale(1.06);
+  }
+}
+@keyframes intro-recede {
+  to {
+    transform: scale(1.12);
+    opacity: 0;
   }
 }

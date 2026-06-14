@@ -6,8 +6,9 @@ const FRAMES = ["GENAI", "AGENTIC AI", "RAG", "LANGCHAIN", "MLOPS", "LLM APPS"];
 const FRAME_COLORS = ["#eae0cf", "#eae0cf", "#9fb0cc", "#eae0cf"];
 const FLIP_COUNT = 14; // keyword flashes
 const FLIP_MS = 110; // per flash
-const LOCK_MS = 1300; // name slam + flare
-const OUT_MS = 600; // wipe out
+const LOCK_MS = 1300; // name slam + sheen
+const OUT_MS = 700; // dissolve out
+const OUT_BUFFER = 150; // let the dissolve finish before unmounting
 
 // Deterministic per-frame jitter (no Math.random, so SSR/client first frame match).
 function jitter(i: number): string {
@@ -71,7 +72,7 @@ export function IntroAnimation() {
         window.clearInterval(intervalRef.current);
         setPhase("lock");
         later(() => setPhase("out"), LOCK_MS);
-        later(finish, LOCK_MS + OUT_MS);
+        later(finish, LOCK_MS + OUT_MS + OUT_BUFFER);
       } else {
         setFrame(f);
       }
@@ -115,7 +116,6 @@ export function IntroAnimation() {
             PULKIT
             <br />
             GARG
-            <span className="intro-flare" aria-hidden="true" />
           </span>
         )}
       </div>
