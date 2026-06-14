@@ -12,7 +12,7 @@ export const site = {
   resumePath: "/Pulkit_Garg_Resume.pdf",
   web3formsKey: "TODO-CONTENT-replace-with-web3forms-access-key",
   availability: "Open to ML / GenAI roles. Reply within 24h.",
-  footerTag: "Built with Next.js, designed loud",
+  footerTag: "Made with ♥ by Pulkit Garg",
   bio: [
     "I'm a computer science student at Thapar who builds AI that does real work instead of living in notebooks: agentic systems, RAG pipelines, and LLM apps wired into production workflows.",
     "My favorite projects are the ones where the AI acts, not just answers: a data pipeline that heals its own failures, a sales platform that runs its own outreach.",
