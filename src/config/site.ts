@@ -10,7 +10,8 @@ export const site = {
   github: "https://github.com/PulkitGarg31",
   linkedin: "https://www.linkedin.com/in/pulkitgarg31",
   resumePath: "/Pulkit_Garg_Resume.pdf",
-  web3formsKey: "TODO-CONTENT-replace-with-web3forms-access-key",
+  // Set NEXT_PUBLIC_WEB3FORMS_KEY in .env.local (local) and in Vercel (deploy).
+  web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "",
   availability: "Open to ML / GenAI roles. Reply within 24h.",
   footerTag: "Made with ♥ by Pulkit Garg",
   bio: [
