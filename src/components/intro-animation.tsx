@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const FRAMES = ["GENAI", "AGENTIC AI", "RAG", "LANGCHAIN", "MLOPS", "LLM APPS"];
-const FRAME_COLORS = ["#eae0cf", "#eae0cf", "#9fb0cc", "#eae0cf"];
+const FRAME_COLORS = ["var(--ink)", "var(--ink)", "var(--display)", "var(--ink)"];
 const FLIP_COUNT = 14; // keyword flashes
 const FLIP_MS = 110; // per flash
 const LOCK_MS = 1300; // name slam + sheen
