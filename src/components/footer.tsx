@@ -36,7 +36,16 @@ export function Footer() {
           <span>
             {site.name} © {new Date().getFullYear()}
           </span>
-          <span>{site.footerTag}</span>
+          <span>
+            {site.footerTag.split("♥").map((part, i, parts) => (
+              <span key={i}>
+                {part}
+                {i < parts.length - 1 && (
+                  <span className="text-red-500">♥</span>
+                )}
+              </span>
+            ))}
+          </span>
         </div>
       </div>
     </footer>
