@@ -1,4 +1,4 @@
-# pulkitgarg portfolio
+# Pulkit Garg Portfolio
 
 Single-page ML engineer portfolio. Next.js 15 static export, Tailwind v4, markdown content.
 
