@@ -65,6 +65,20 @@ body {
   .animate-marquee { animation: none; }
 }
 
+/* scroll reveal: hide only when JS is on (.js) and motion is allowed */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* visible focus ring everywhere */
 :focus-visible {
   outline: 2px solid var(--display);

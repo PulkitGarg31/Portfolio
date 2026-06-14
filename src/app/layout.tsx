@@ -17,6 +17,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${anton.variable} ${inter.variable} font-body bg-bg text-ink antialiased`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { site } from "@/config/site";
+import { Reveal } from "@/components/reveal";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -47,14 +48,17 @@ export function ContactSection() {
   return (
     <section id="contact" className="bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
-        <h2 className="font-display text-[clamp(34px,5vw,52px)] uppercase leading-none text-ink">
-          Get in <span className="text-display">Touch</span>
-        </h2>
-        <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-          Have a role, a project, or just want to say hi? Drop a message and it
-          lands straight in my inbox.
-        </p>
+        <Reveal>
+          <h2 className="font-display text-[clamp(34px,5vw,52px)] uppercase leading-none text-ink">
+            Get in <span className="text-display">Touch</span>
+          </h2>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
+            Have a role, a project, or just want to say hi? Drop a message and it
+            lands straight in my inbox.
+          </p>
+        </Reveal>
 
+        <Reveal delay={0.1}>
         {status === "success" ? (
           <div
             role="status"
@@ -157,6 +161,7 @@ export function ContactSection() {
             </div>
           </form>
         )}
+        </Reveal>
       </div>
     </section>
   );
