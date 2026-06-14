@@ -18,20 +18,17 @@ export function ContactSection() {
     e.preventDefault();
     const form = e.currentTarget;
     setStatus("submitting");
-    const payload = Object.fromEntries(new FormData(form));
+    // Submit as multipart FormData (a CORS "simple" request, no preflight),
+    // which is Web3Forms' recommended method for static sites.
+    const formData = new FormData(form);
+    formData.append("access_key", site.web3formsKey);
+    formData.append("subject", "New message from your portfolio site");
+    formData.append("from_name", "Portfolio Contact Form");
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: site.web3formsKey,
-          subject: "New message from your portfolio site",
-          from_name: "Portfolio Contact Form",
-          ...payload,
-        }),
+        headers: { Accept: "application/json" },
+        body: formData,
       });
       const result = await res.json();
       if (result.success) {
