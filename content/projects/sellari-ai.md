@@ -1,10 +1,10 @@
 ---
-title: "Sellari AI"
-summary: "An end-to-end automated B2B sales platform that manages 100+ leads through structured workflows. Three core modules handle data validation, email verification, and AI content generation, with the Gemini, Gmail, and Verifalia APIs wired in to automate outreach and cut manual work."
+title: "SynthSales"
+summary: "SynthSales is an agentic B2B sales CRM that converts uploaded company CSVs into researched, scored, and contactable prospects through an 8-agent AI pipeline. Its FastAPI backend handles enrichment, email verification, outreach, reply tracking, meeting scheduling, access gating, kill-switches, and pipeline undo."
 category: agents
-tech: [Python, Gemini API, Gmail API, Verifalia API]
-github: https://github.com/PulkitGarg31/Agentic-AI-Sales-CRM
-image: /projects/sellari-ai.png
+tech: [Python, FastAPI, PostgreSQL, Redis, Alembic, Gemini API, Verifalia API]
+github: https://github.com/PulkitGarg31/SynthSales-Agentic-AI-Sales-CRM
+image: /projects/synthsales.png
 featured: true
 order: 1
 ---
