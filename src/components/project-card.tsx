@@ -17,7 +17,7 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
         <h3 className="mt-2 font-display text-lg uppercase leading-tight text-ink">{project.title}</h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{project.summary}</p>
+        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{project.summary}</p>
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted">
           <span>{project.tech.join(" · ")}</span>
         </div>
