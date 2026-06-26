@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const FRAMES = ["GENAI", "AGENTIC AI", "RAG", "LANGCHAIN", "MLOPS", "LLM APPS"];
+const FRAMES = ["GENAI", "AGENTIC AI", "RAG", "LANGCHAIN", "MLOPS", "LLM APPS", "Machine Learning"];
 const FRAME_COLORS = ["var(--ink)", "var(--ink)", "var(--display)", "var(--ink)"];
 const FLIP_COUNT = 14; // keyword flashes
 const FLIP_MS = 110; // per flash
