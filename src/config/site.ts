@@ -21,14 +21,13 @@ export const site = {
   ],
   education: "B.E. Computer Science, Thapar Institute of Engineering and Technology, 2023-2027, CGPA 8.71",
   skills: [
-    { group: "Languages", items: ["C", "C++","Python", "JavaScript"] },
-    { group: "Machine Learning", items: ["Scikit-learn", "TensorFlow", " Regression & Classification", "Neural Networks", "NLP"] },
-    { group: "AI & Automation", items: ["LangChain", "LangGraph","Agentic AI", "RAG Pipelines", "Prompt Engineering", "LLM Integration", "Gemini API", "Ollama"] },
-    { group: "Data Engineering", items: ["Apache Airflow", "dbt", "Streamlit"] },
-    { group: "Backend & APIs", items: ["FastAPI", "REST APIs", "NextAuth.js"] },
-    { group: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "HTML5", "CSS3"] },
-    { group: "Databases", items: ["PostgreSQL", "MongoDB", "MySQL", "ChromaDB"] },
-    { group: "Tools & Version Control", items: ["Git", "GitHub", "Docker"] },
+    { group: "Languages & CS", items: ["C", "C++", "Python", "JavaScript", "Data Structures & Algorithms"] },
+    { group: "Backend & APIs", items: ["FastAPI", "REST APIs", "Redis", "NextAuth.js"] },
+    { group: "Databases", items: ["MySQL", "PostgreSQL", "MongoDB", "ChromaDB"] },
+    { group: "Frontend", items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"] },
+    { group: "AI & Automation", items: ["GenAI", "LangChain", "LangGraph", "LLM Integration", "Ollama", "Streamlit"] },
+    { group: "Machine Learning", items: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Regression & Classification", "Neural Networks", "NLP"] },
+    { group: "Tools & Version Control", items: ["Git", "GitHub", "Docker", "AWS (EC2, S3)"] },
   ],
 };
 
