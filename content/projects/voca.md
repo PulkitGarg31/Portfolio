@@ -5,5 +5,6 @@ category: [other, genai]
 tech: [Next.js, React, MongoDB, NextAuth.js, LangChain]
 github: https://github.com/PulkitGarg31/Voca
 demo: https://voca.pulkitgarg31.tech
+image: /projects/voca.png
 order: 2
 ---
