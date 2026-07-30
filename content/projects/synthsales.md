@@ -4,6 +4,7 @@ summary: "SynthSales is an agentic B2B sales CRM that converts uploaded company 
 category: agents
 tech: [Python, FastAPI, PostgreSQL, Redis, Alembic, Gemini API, Verifalia API]
 github: https://github.com/PulkitGarg31/SynthSales-Agentic-AI-Sales-CRM
+demo: https://synthsales.vercel.app
 image: /projects/synthsales.png
 featured: true
 order: 1

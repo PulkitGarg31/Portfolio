@@ -4,5 +4,6 @@ summary: "VOCA helps users save words, practice with spaced repetition, and trac
 category: [other, genai]
 tech: [Next.js, React, MongoDB, NextAuth.js, LangChain]
 github: https://github.com/PulkitGarg31/Voca
+demo: https://voca.pulkitgarg31.tech
 order: 2
 ---
