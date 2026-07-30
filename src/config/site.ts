@@ -27,7 +27,7 @@ export const site = {
     { group: "Frontend", items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"] },
     { group: "AI & Automation", items: ["GenAI", "LangChain", "LangGraph", "LLM Integration", "Ollama", "Streamlit"] },
     { group: "Machine Learning", items: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Regression & Classification", "Neural Networks", "NLP"] },
-    { group: "Tools & Version Control", items: ["Git", "GitHub", "Docker", "AWS (EC2, S3)"] },
+    { group: "Cloud & DevOps", items: ["Git", "GitHub", "Docker", "AWS (EC2, S3)"] },
   ],
 };
 
