@@ -17,8 +17,8 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
   const [category, setCategory] = useState<Category | "all">("all");
   const cats: (Category | "all")[] = ["all", ...activeCategories(projects)];
   const filtered = filterProjects(projects, category);
-  const featuredFirst = filtered[0]?.featured === true;
-  const gridItems = featuredFirst ? filtered.slice(1) : filtered;
+  const featuredItems = filtered.filter((p) => p.featured);
+  const gridItems = filtered.filter((p) => !p.featured);
 
   return (
     <section id="work" className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
@@ -47,13 +47,13 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
       </Reveal>
 
       <div className="mt-8 space-y-5">
-        {featuredFirst && (
-          <Reveal>
+        {featuredItems.map((p, i) => (
+          <Reveal key={p.slug} delay={i * 0.06}>
             <motion.div layout>
-              <FeaturedCard project={filtered[0]} />
+              <FeaturedCard project={p} />
             </motion.div>
           </Reveal>
-        )}
+        ))}
         <div className="grid gap-5 sm:grid-cols-2">
           {gridItems.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.06}>

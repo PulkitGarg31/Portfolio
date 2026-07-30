@@ -44,9 +44,11 @@ describe("loadProjects", () => {
     expect(() => loadProjects(fx("no-featured"))).toThrowError(/featured/);
   });
 
-  it("throws when two projects are featured", () => {
+  it("allows multiple featured projects sorted by order", () => {
     vi.spyOn(console, "warn").mockImplementation(() => {});
-    expect(() => loadProjects(fx("two-featured"))).toThrowError(/found 2/);
+    const projects = loadProjects(fx("two-featured"));
+    expect(projects.map((p) => p.slug)).toEqual(["one", "two"]);
+    expect(projects.every((p) => p.featured)).toBe(true);
   });
 
   it("throws on an empty content directory", () => {

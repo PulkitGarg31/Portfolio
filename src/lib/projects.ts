@@ -68,12 +68,8 @@ export function loadProjects(dir: string = DEFAULT_DIR): Project[] {
     throw new Error(`No projects found in ${dir}. Add at least one .md file`);
   }
 
-  const featured = projects.filter((p) => p.featured);
-  if (featured.length !== 1) {
-    throw new Error(
-      `Exactly one project must set featured: true (found ${featured.length}` +
-        (featured.length ? `: ${featured.map((p) => p.slug).join(", ")})` : ")"),
-    );
+  if (!projects.some((p) => p.featured)) {
+    throw new Error("At least one project must set featured: true");
   }
 
   return projects.sort(
