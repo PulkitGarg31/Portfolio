@@ -3,7 +3,7 @@ type Paper = {
   authors: string[];
   venue: string;
   date: string;
-  url?: string; // DOI or proceedings link, once it is out
+  url?: string; // PDF in public/papers/, or a DOI / proceedings link
   projectSlug?: string; // links to the project card with this id
 };
 
@@ -56,6 +56,7 @@ export const site = {
       venue:
         "2026 International Conference on Advancement of Cyber Security and Digital Forensics (ICACSDF), UPES Dehradun",
       date: "Sep 2026",
+      url: "/papers/halo-cme-detection-icacsdf-2026.pdf",
       projectSlug: "halo-cme-detection",
     },
   ] as Paper[],
