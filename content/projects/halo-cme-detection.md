@@ -6,6 +6,7 @@ tech: [Python, scikit-learn, XGBoost, Pandas, NumPy, FastAPI, Render]
 github: https://github.com/Arnav020/Halo-CME-Detection
 demo: https://halo-cme-detection.onrender.com
 image: /projects/halo-cme.png
+featured: true
 order: 4
 demoNote: "Free hosting: the first load can take about 30 seconds."
 highlights:

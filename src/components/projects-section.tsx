@@ -55,13 +55,17 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
           </Reveal>
         ))}
         <div className="grid gap-5 sm:grid-cols-2">
-          {gridItems.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 0.06}>
-              <motion.div layout>
-                <ProjectCard project={p} />
-              </motion.div>
-            </Reveal>
-          ))}
+          {gridItems.map((p, i) => {
+            // A card left alone on the last row spans both columns instead of leaving a gap.
+            const alone = gridItems.length % 2 === 1 && i === gridItems.length - 1;
+            return (
+              <Reveal key={p.slug} delay={i * 0.06} className={alone ? "sm:col-span-2" : undefined}>
+                <motion.div layout>
+                  <ProjectCard project={p} wide={alone} />
+                </motion.div>
+              </Reveal>
+            );
+          })}
         </div>
         {filtered.length === 0 && <p className="text-muted">Nothing here yet.</p>}
       </div>

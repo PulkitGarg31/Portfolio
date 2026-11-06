@@ -1,14 +1,14 @@
 import { CATEGORY_LABELS, type Project } from "@/lib/projects-shared";
 import { ProjectImage } from "@/components/project-image";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, wide = false }: { project: Project; wide?: boolean }) {
   return (
     <article
       id={project.slug}
       className="overflow-hidden rounded-xl bg-surface shadow-[0_4px_14px_rgba(17,24,68,0.08)]"
     >
       {project.image && <ProjectImage project={project} className="aspect-video" />}
-      <div className="p-5">
+      <div className={wide ? "max-w-3xl p-5 sm:p-8" : "p-5"}>
         <div className="flex flex-wrap items-center gap-2">
           {project.categories.map((c) => (
             <span
@@ -19,7 +19,13 @@ export function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
-        <h3 className="mt-2 font-display text-lg uppercase leading-tight text-ink">{project.title}</h3>
+        <h3
+          className={`font-display uppercase leading-tight text-ink ${
+            wide ? "mt-3 text-[clamp(22px,3vw,32px)]" : "mt-2 text-lg"
+          }`}
+        >
+          {project.title}
+        </h3>
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{project.summary}</p>
         {project.highlights && (
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[13px] leading-relaxed text-muted marker:text-support">
