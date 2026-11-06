@@ -18,6 +18,8 @@ const projectSchema = z.object({
   image: z.string().startsWith("/").optional(),
   featured: z.boolean().default(false),
   order: z.number().int().positive(),
+  highlights: z.array(z.string().min(1)).max(3).optional(),
+  demoNote: z.string().min(1).optional(),
 }).strict();
 
 const DEFAULT_DIR = path.join(process.cwd(), "content", "projects");

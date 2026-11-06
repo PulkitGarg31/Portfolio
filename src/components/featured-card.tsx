@@ -3,7 +3,10 @@ import { ProjectImage } from "@/components/project-image";
 
 export function FeaturedCard({ project }: { project: Project }) {
   return (
-    <article className="overflow-hidden rounded-2xl bg-surface shadow-[0_6px_20px_rgba(17,24,68,0.10)] sm:flex">
+    <article
+      id={project.slug}
+      className="overflow-hidden rounded-2xl bg-surface shadow-[0_6px_20px_rgba(17,24,68,0.10)] sm:flex"
+    >
       <div className="flex-1 p-6 sm:p-8">
         <div className="flex flex-wrap items-center gap-2">
           {project.categories.map((c) => (
@@ -19,6 +22,13 @@ export function FeaturedCard({ project }: { project: Project }) {
           {project.title}
         </h3>
         <p className="mt-3 max-w-prose text-sm leading-relaxed text-muted">{project.summary}</p>
+        {project.highlights && (
+          <ul className="mt-4 max-w-prose list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted marker:text-support">
+            {project.highlights.map((h) => (
+              <li key={h}>{h}</li>
+            ))}
+          </ul>
+        )}
         <ul className="mt-4 flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <li key={t} className="rounded border border-support px-2 py-0.5 text-[11px] text-display">
@@ -46,6 +56,7 @@ export function FeaturedCard({ project }: { project: Project }) {
             </a>
           )}
         </div>
+        {project.demoNote && <p className="mt-2 text-[11px] text-muted">{project.demoNote}</p>}
       </div>
       <ProjectImage project={project} className="min-h-[240px] sm:w-[52%]" />
     </article>

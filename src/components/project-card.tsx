@@ -3,7 +3,10 @@ import { ProjectImage } from "@/components/project-image";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="overflow-hidden rounded-xl bg-surface shadow-[0_4px_14px_rgba(17,24,68,0.08)]">
+    <article
+      id={project.slug}
+      className="overflow-hidden rounded-xl bg-surface shadow-[0_4px_14px_rgba(17,24,68,0.08)]"
+    >
       {project.image && <ProjectImage project={project} className="aspect-video" />}
       <div className="p-5">
         <div className="flex flex-wrap items-center gap-2">
@@ -18,6 +21,13 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <h3 className="mt-2 font-display text-lg uppercase leading-tight text-ink">{project.title}</h3>
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{project.summary}</p>
+        {project.highlights && (
+          <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[13px] leading-relaxed text-muted marker:text-support">
+            {project.highlights.map((h) => (
+              <li key={h}>{h}</li>
+            ))}
+          </ul>
+        )}
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted">
           <span>{project.tech.join(" · ")}</span>
         </div>
@@ -31,6 +41,7 @@ export function ProjectCard({ project }: { project: Project }) {
             </a>
           )}
         </div>
+        {project.demoNote && <p className="mt-2 text-[11px] text-muted">{project.demoNote}</p>}
       </div>
     </article>
   );

@@ -1,10 +1,11 @@
-export const CATEGORIES = ["genai", "agents", "ml", "other"] as const;
+export const CATEGORIES = ["genai", "agents", "data", "ml", "other"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 export const CATEGORY_LABELS: Record<Category | "all", string> = {
   all: "All",
   genai: "GenAI",
   agents: "Agents",
+  data: "Data",
   ml: "ML",
   other: "Full Stack",
 };
@@ -20,6 +21,8 @@ export type Project = {
   image?: string;
   featured: boolean;
   order: number;
+  highlights?: string[];
+  demoNote?: string;
 };
 
 export function filterProjects(

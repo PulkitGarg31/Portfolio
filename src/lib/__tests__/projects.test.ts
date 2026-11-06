@@ -51,6 +51,21 @@ describe("loadProjects", () => {
     expect(projects.every((p) => p.featured)).toBe(true);
   });
 
+  it("loads optional highlights and demoNote", () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    const [project] = loadProjects(fx("highlights"));
+    expect(project.highlights).toEqual(["First point.", "Second point.", "Third point."]);
+    expect(project.demoNote).toBe("First load can be slow.");
+    expect(project.categories).toEqual(["data"]);
+  });
+
+  it("throws when a project has more than three highlights", () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    expect(() => loadProjects(fx("too-many-highlights"))).toThrowError(
+      /four\.md.*highlights: Array must contain at most 3/s,
+    );
+  });
+
   it("throws on an empty content directory", () => {
     vi.spyOn(console, "warn").mockImplementation(() => {});
     expect(() => loadProjects(fx("empty"))).toThrowError(/No projects found/);
