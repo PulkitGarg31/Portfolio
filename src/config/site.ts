@@ -1,34 +1,83 @@
+type Paper = {
+  title: string;
+  authors: string[];
+  venue: string;
+  date: string;
+  url?: string; // DOI or proceedings link, once it is out
+  projectSlug?: string; // links to the project card with this id
+};
+
+type Achievement = { title: string; detail: string; date: string; url?: string };
+
 export const site = {
   name: "Pulkit Garg",
-  role: "ML Engineer",
-  badges: ["ML Engineer", "GenAI & Agentic AI"],
-  subHeadline: ["I build AI systems", "that ship different"],
+  url: "https://pulkitgarg31.tech",
+  role: "Backend & AI Engineer",
+  badges: ["Backend Development", "Agentic AI"],
+  subHeadline: ["I build backends", "that run AI agents"],
   positioning:
-    "GenAI, agentic systems & ML, built end-to-end and shipped, not just notebooked.",
-  marquee: ["LLM Applications", "Agentic AI", "RAG Pipelines", "Data Engineering", "Machine Learning"],
+    "Backends, agentic AI and ML, built end to end and shipped, not just notebooked.",
+  marquee: [
+    "Backend Development",
+    "Agentic AI",
+    "REST APIs",
+    "System Design",
+    "Scalable Systems",
+    "Data Structures & Algorithms",
+    "Machine Learning",
+  ],
   email: "pulkit3110@gmail.com",
   github: "https://github.com/PulkitGarg31",
   linkedin: "https://www.linkedin.com/in/pulkitgarg31",
   resumePath: "/Pulkit_Garg_Resume.pdf",
   // Set NEXT_PUBLIC_WEB3FORMS_KEY in .env.local (local) and in Vercel (deploy).
   web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "",
-  availability: "Open to ML / GenAI roles.",
+  availability: "Open to backend, AI and ML roles.",
   footerTag: "Made with ♥ by Pulkit Garg",
   bio: [
-    "I'm a computer science student at Thapar who builds AI that does real work instead of living in notebooks: agentic systems, RAG pipelines, and LLM apps wired into production workflows.",
-    "My favorite projects are the ones where the AI acts, not just answers: a data pipeline that heals its own failures, a sales platform that runs its own outreach.",
-    "I've completed Stanford and DeepLearning.AI machine learning coursework, and I'm looking for ML and GenAI engineering roles where shipping matters. If you're building something ambitious with LLMs, let's talk.",
+    "I'm a Computer Science student at Thapar who builds backends that do real work: APIs, data pipelines and AI agents wired into real workflows.",
+    "My favourite projects are the ones where the AI acts, not just answers: a sales platform that researches companies and drafts its own outreach, and a data pipeline that repairs schema drift in incoming files by itself.",
+    "I co-authored a research paper on detecting Halo Coronal Mass Ejections from Aditya-L1 solar wind data, published at ICACSDF 2026, and I was selected for Amazon ML Summer School 2026. I'm looking for backend and AI engineering roles where shipping matters. If you're building something ambitious, let's talk.",
   ],
-  education: "B.E. Computer Science, Thapar Institute of Engineering and Technology, 2023-2027, CGPA 8.71",
+  education:
+    "B.E. Computer Science and Engineering · Thapar Institute of Engineering and Technology · Aug 2023 to May 2027 · CGPA 8.71",
   skills: [
-    { group: "Languages & CS", items: ["C", "C++", "Python", "JavaScript", "Data Structures & Algorithms"] },
-    { group: "Backend & APIs", items: ["FastAPI", "REST APIs", "Redis", "NextAuth.js"] },
-    { group: "Databases", items: ["MySQL", "PostgreSQL", "MongoDB", "ChromaDB"] },
-    { group: "Frontend", items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"] },
-    { group: "AI & Automation", items: ["GenAI", "LangChain", "LangGraph", "LLM Integration", "Ollama", "Streamlit"] },
-    { group: "Machine Learning", items: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Regression & Classification", "Neural Networks", "NLP"] },
-    { group: "Cloud & DevOps", items: ["Git", "GitHub", "Docker", "AWS (EC2, S3)"] },
+    { group: "Languages & CS", items: ["C++", "Python", "Data Structures & Algorithms"] },
+    { group: "Backend & APIs", items: ["FastAPI", "REST APIs", "Microservices", "API Testing", "pytest", "Redis"] },
+    { group: "Databases", items: ["SQL", "MySQL", "PostgreSQL", "MongoDB", "ChromaDB"] },
+    { group: "AI & Automation", items: ["GenAI", "LangChain", "LLM Integration", "Ollama", "Streamlit"] },
+    { group: "Machine Learning", items: ["Pandas", "NumPy", "Scikit-learn", "Regression & Classification", "Neural Networks", "NLP"] },
+    { group: "Cloud & DevOps", items: ["Git", "GitHub", "Docker"] },
   ],
+  research: [
+    {
+      title: "Real-Time Detection of Halo Coronal Mass Ejections from Solar Wind Data",
+      authors: ["Arnav Joshi", "Pulkit Garg", "Vijay Kumari", "Stuti Chug"],
+      venue:
+        "2026 International Conference on Advancement of Cyber Security and Digital Forensics (ICACSDF), UPES Dehradun",
+      date: "Sep 2026",
+      projectSlug: "halo-cme-detection",
+    },
+  ] as Paper[],
+  achievements: [
+    {
+      title: "Amazon ML Summer School 2026",
+      detail: "Selected nationwide for Amazon's competitive ML training program",
+      date: "2026",
+    },
+    {
+      title: "Advanced Learning Algorithms",
+      detail: "DeepLearning.AI & Stanford University (Coursera)",
+      date: "Dec 2025",
+      url: "https://coursera.org/verify/946HWVIOR5BS",
+    },
+    {
+      title: "Supervised Machine Learning: Regression and Classification",
+      detail: "DeepLearning.AI & Stanford University (Coursera)",
+      date: "Jan 2025",
+      url: "https://coursera.org/verify/M1N8S47R2IYD",
+    },
+  ] as Achievement[],
 };
 
 export type Site = typeof site;
