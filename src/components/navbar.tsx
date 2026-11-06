@@ -3,6 +3,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 const LINKS = [
   { href: "#work", label: "Projects" },
+  { href: "#research", label: "Research" },
   { href: "#stack", label: "Stack" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },

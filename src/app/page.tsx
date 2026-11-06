@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { Marquee } from "@/components/marquee";
 import { ProjectsSection } from "@/components/projects-section";
+import { ResearchSection } from "@/components/research-section";
 import { StackSection } from "@/components/stack-section";
 import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Marquee />
         <ProjectsSection projects={projects} />
+        <ResearchSection />
         <StackSection />
         <AboutSection />
         <ContactSection />
